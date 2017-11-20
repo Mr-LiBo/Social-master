@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:gravity="center_horizontal"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <!--waterview_amplitude     振幅 ，参考值10到100之间-->
+    <!--waterview_up_velocity   上升速度，参考值3-->
+    <!--waterview_paint_color_first     第一支画笔的颜色-->
+    <!--waterview_paint_color_second     第二支画笔的颜色-->
+    <!--waterview_sleep_time     休眠时间毫秒 参考值100-->
+    <!--waterview_offset_increment_value    初项递增值，表示波浪的快慢   0参考值.4f-->
+    <libo.com.social.ui.views.WaterView
+        android:layout_width="250dp"
+        android:id="@+id/waterview"
+        android:layout_height="250dp"
+        app:waterview_paint_color_first="#c2ff94"
+        app:waterview_paint_color_second="#356d74"
+        app:waterview_frame_color="#e0efed"
+        app:waterview_frame_width="1dp"
+        app:waterview_amplitude="40"
+        app:waterview_up_velocity="5"
+        app:waterview_sleep_time="100"
+        app:waterview_offset_increment_value="0.4"
+        app:waterview_isShowFrame="false"
+        />
+
+
+    <SeekBar
+        android:layout_marginTop="20dp"
+        android:id="@+id/seekBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>

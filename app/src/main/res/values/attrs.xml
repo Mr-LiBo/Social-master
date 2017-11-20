@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="WaterView">
+        <attr name="waterview_paint_color_first" />
+        <attr name="waterview_paint_color_second" />
+        <attr name="waterview_amplitude" />
+        <attr name="waterview_offset_increment_value" />
+        <attr name="waterview_up_velocity" />
+        <attr name="waterview_sleep_time" />
+        <attr name="waterview_frame_width" />
+        <attr name="waterview_frame_color" />
+        <attr name="waterview_isShowFrame" />
+    </declare-styleable>
+
+    <declare-styleable name="RefreshRecyclerView">
+        <attr name="refresh_able" format="boolean"/>
+        <attr name="load_more_able" format="boolean"/>
+    </declare-styleable>
+</resources>
