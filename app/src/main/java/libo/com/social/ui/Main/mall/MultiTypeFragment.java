@@ -44,9 +44,9 @@ public class MultiTypeFragment extends Fragment implements IViewHolderFactory {
         mRecyclerView.setAdapter(mAdapter);
 
         mAdapter.addAll(Arrays.asList(getImageVirtualData()), VIEW_TYPE_IAMGE);
-        mAdapter.addAll(Arrays.asList(getTextVirtualData()), VIEW_TYPE_TEXT);
-        mAdapter.addAll(Arrays.asList(getTextImageVirualData()), VIEW_TYPE_TEXT_IMAGE);
-        mAdapter.addAll(Arrays.asList(getRecordVirtualData()), VIEW_TYPE_CARD);
+//        mAdapter.addAll(Arrays.asList(getTextVirtualData()), VIEW_TYPE_TEXT);
+//        mAdapter.addAll(Arrays.asList(getTextImageVirualData()), VIEW_TYPE_TEXT_IMAGE);
+//        mAdapter.addAll(Arrays.asList(getRecordVirtualData()), VIEW_TYPE_CARD);
 
        int coount =  mAdapter.getItemCount();
         return rootView;
