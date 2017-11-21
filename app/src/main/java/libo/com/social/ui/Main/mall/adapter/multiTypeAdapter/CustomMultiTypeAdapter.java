@@ -67,9 +67,7 @@ public class CustomMultiTypeAdapter extends RecyclerAdapter {
      */
     @Override
     public void onBindBaseViewHolder(BaseViewHolder holder, int position) {
-        if (position  >0) {
             holder.setData(mViewsData.get(position));
-        }
     }
 
     /**
