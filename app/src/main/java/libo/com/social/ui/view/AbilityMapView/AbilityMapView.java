@@ -1,4 +1,4 @@
-package libo.com.social.ui.views.AbilityMapView;
+package libo.com.social.ui.view.AbilityMapView;
 
 import android.content.Context;
 import android.graphics.Canvas;

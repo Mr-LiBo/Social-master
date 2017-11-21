@@ -1,4 +1,4 @@
-package libo.com.social.ui.Main.mall.adapter.viewHolder;
+package libo.com.social.ui.Main.mall.adapter.multiTypeAdapter.viewHolder;
 
 import android.util.Log;
 import android.view.Gravity;

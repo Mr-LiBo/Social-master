@@ -1,4 +1,4 @@
-package libo.com.social.ui.Main.mall.adapter.viewHolder;
+package libo.com.social.ui.Main.mall.adapter.multiTypeAdapter.viewHolder;
 
 import android.support.annotation.IdRes;
 import android.support.v7.widget.RecyclerView;
@@ -10,7 +10,7 @@ import android.view.ViewGroup;
  * BaseViewHolder 顶级父类
  * Created by linlongxin on 2015/12/19.
  */
-public class BaseViewHolder<T> extends RecyclerView.ViewHolder implements View.OnClickListener{
+public class BaseViewHolder<T> extends RecyclerView.ViewHolder implements View.OnClickListener {
 
     private final String TAG = "BaseViewHolder";
     private T mData;
@@ -24,9 +24,11 @@ public class BaseViewHolder<T> extends RecyclerView.ViewHolder implements View.O
         onInitializeView();
     }
 
+    /**
+     * 子类实现类
+     */
     public void onInitializeView() {
-
-    }
+    };
 
     public <T extends View> T findViewById(@IdRes int resId) {
         if (itemView != null) {
@@ -37,19 +39,19 @@ public class BaseViewHolder<T> extends RecyclerView.ViewHolder implements View.O
     }
 
     public void setData(final T data) {
-        if (data == null) {
-            return;
+        if (data != null) {
+            this.mData = data;
+            itemView.setOnClickListener(this);
         }
-        mData = data;
-        itemView.setOnClickListener(this);
     }
 
     public T getData() {
-        return mData;
+        return this.mData;
     }
 
     /**
      * 需先调用 setData 方法才生效，并且保留 super.setData()
+     *
      * @param data
      */
     public void onItemViewClick(T data) {

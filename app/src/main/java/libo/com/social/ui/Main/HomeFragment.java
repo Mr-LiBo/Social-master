@@ -1,17 +1,15 @@
 package libo.com.social.ui.Main;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import libo.com.social.R;
-import libo.com.social.ui.views.AbilityMapView.AbilityBean;
-import libo.com.social.ui.views.AbilityMapView.AbilityMapView;
+import libo.com.social.ui.view.AbilityMapView.AbilityBean;
+import libo.com.social.ui.view.AbilityMapView.AbilityMapView;
 
 /**
  * Created by liaodp on 2017/11/8.

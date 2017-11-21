@@ -1,4 +1,4 @@
-package libo.com.social.ui.views.AbilityMapView;
+package libo.com.social.ui.view.AbilityMapView;
 
 /**
  * Created by liaodp on 2017/11/10.

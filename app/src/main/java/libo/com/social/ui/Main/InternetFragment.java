@@ -1,6 +1,5 @@
 package libo.com.social.ui.Main;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -14,8 +13,8 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 
 import libo.com.social.R;
-import libo.com.social.ui.views.RoundProgressBar;
-import libo.com.social.ui.views.WaterProgressView;
+import libo.com.social.ui.view.RoundProgressBar;
+import libo.com.social.ui.view.WaterProgressView;
 
 /**
  * Created by liaodp on 2017/11/8.

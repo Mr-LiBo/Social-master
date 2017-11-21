@@ -1,4 +1,4 @@
-package libo.com.social.ui.views;
+package libo.com.social.ui.view;
 
 import android.content.Context;
 import android.content.res.TypedArray;

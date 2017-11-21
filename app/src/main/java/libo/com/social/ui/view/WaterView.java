@@ -1,4 +1,4 @@
-package libo.com.social.ui.views;
+package libo.com.social.ui.view;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -8,7 +8,6 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.Region;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.View;
 
 import libo.com.social.R;

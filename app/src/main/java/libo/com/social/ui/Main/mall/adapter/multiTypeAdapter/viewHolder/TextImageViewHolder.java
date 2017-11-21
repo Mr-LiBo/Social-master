@@ -1,4 +1,4 @@
-package libo.com.social.ui.Main.mall.adapter.viewHolder;
+package libo.com.social.ui.Main.mall.adapter.multiTypeAdapter.viewHolder;
 
 import android.view.ViewGroup;
 import android.widget.ImageView;

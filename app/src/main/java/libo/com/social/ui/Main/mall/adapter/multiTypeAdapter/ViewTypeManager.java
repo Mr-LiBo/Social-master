@@ -1,9 +1,9 @@
-package libo.com.social.ui.Main.mall.adapter;
+package libo.com.social.ui.Main.mall.adapter.multiTypeAdapter;
 
 import android.util.SparseIntArray;
 import android.view.ViewGroup;
 
-import libo.com.social.ui.Main.mall.adapter.viewHolder.BaseViewHolder;
+import libo.com.social.ui.Main.mall.adapter.multiTypeAdapter.viewHolder.BaseViewHolder;
 
 /**
  * @Author LiBo on 2017/11/20.
@@ -23,7 +23,7 @@ class ViewTypeManager {
     }
 
     protected int getViewType(int position) {
-        return mPositionToTypeMap.get(position);
+        return this.mPositionToTypeMap.get(position);
     }
 
     protected void putViewType(int position, int viewType) {
@@ -31,7 +31,7 @@ class ViewTypeManager {
     }
 
     public void setViewHolderFactory(IViewHolderFactory factory){
-        mViewHolderFactory = factory;
+        this.mViewHolderFactory = factory;
     }
 
     protected <T extends BaseViewHolder> T getViewHolder(ViewGroup parent, int viewType){
@@ -41,5 +41,7 @@ class ViewTypeManager {
             return null;
         }
     }
+
+
 
 }
