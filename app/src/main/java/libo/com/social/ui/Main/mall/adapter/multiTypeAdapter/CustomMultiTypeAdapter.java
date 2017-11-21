@@ -72,37 +72,19 @@ public class CustomMultiTypeAdapter extends RecyclerAdapter {
      */
     @Override
     public int getItemViewType(int position) {
-
         return mViewHolderManager.getViewType(position);
     }
 
 
-    public <T> void add(T data,int viewType){
-        if ( data == null){
-            return;
-        }
-        mViewsData.add(data);
-        mViewHolderManager.putViewType(mViewCount -1,viewType);// mViewCount从1开始
-        int positionStart = mViewCount -1;
-        mViewCount ++;
-        notifyItemRangeChanged(positionStart,1);
-    }
-
-    public <T> void addAll(T[] data,int viewType){
-        addAll(Arrays.asList(data),viewType);
-    }
-
     public <T> void addAll(List<T> data,int viewType){
-        if ( data == null || data.size() ==0){
-            return;
-        }
-        int size = data.size();
         mViewsData.addAll(data);
-        int positionStart = mViewCount -1;
+        int positionStart = mViewCount ;
+        int size = data.size();
         for (int i=0;i<size;i++){
-            mViewHolderManager.putViewType(mViewCount - 1,viewType);
+            mViewHolderManager.putViewType(mViewCount ,viewType);
             mViewCount++;
         }
+        Log.e("addAll","data.size() :" +data.size()+"  mViewCount : "+mViewCount);
         notifyItemRangeInserted(positionStart,size);
     }
 

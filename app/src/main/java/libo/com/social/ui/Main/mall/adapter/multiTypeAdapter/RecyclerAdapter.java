@@ -25,7 +25,7 @@ import libo.com.social.ui.Main.mall.adapter.multiTypeAdapter.viewHolder.BaseView
  */
 public abstract class RecyclerAdapter<T> extends RecyclerView.Adapter<BaseViewHolder<T>> {
 
-    private static final String TAG = "RecyclerAdapter";
+
     int mViewCount = 0;
     private List<T> mData = new ArrayList<>();
 
@@ -46,7 +46,6 @@ public abstract class RecyclerAdapter<T> extends RecyclerView.Adapter<BaseViewHo
         mStatusView.setLayoutParams(new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT));
         mLoadMoreView = (LinearLayout) mStatusView.findViewById(R.id.load_more_view);
         mNoMoreView = (TextView) mStatusView.findViewById(R.id.no_more_view);
-        mViewCount ++;
     }
 
     @Override
@@ -62,16 +61,12 @@ public abstract class RecyclerAdapter<T> extends RecyclerView.Adapter<BaseViewHo
      */
     @Override
     public void onBindViewHolder(BaseViewHolder<T> holder, int position) {
-
         if (holder == null || position < 0) {
             return;
         }
         int dataSize = mData.size();
         if (position == 0) {
-            // 最先加载 mStatusView 时不需要绑定数据
-            if (mViewCount == 1 ) {
-                return;
-            } else if (dataSize > 0) {
+           if (dataSize > 0) {
                 holder.setData(mData.get(0));
             }
         }
@@ -96,17 +91,7 @@ public abstract class RecyclerAdapter<T> extends RecyclerView.Adapter<BaseViewHo
         return mViewCount;
     }
 
-    public void showNoMore() {
-        if (mLoadMoreView != null) {
-            mLoadMoreView.post(new Runnable() {
-                @Override
-                public void run() {
-                    setViewVisible(mLoadMoreView, false);
-                    setViewVisible(mNoMoreView, true);
-                }
-            });
-        }
-    }
+
 
 
 

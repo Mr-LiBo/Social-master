@@ -9,6 +9,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.Arrays;
+
 import libo.com.social.R;
 import libo.com.social.entry.Consumption;
 import libo.com.social.entry.TextImage;
@@ -25,15 +27,13 @@ import libo.com.social.ui.Main.mall.adapter.multiTypeAdapter.viewHolder.TextView
 public class MultiTypeFragment extends Fragment implements IViewHolderFactory {
     private RecyclerView mRecyclerView;
     private CustomMultiTypeAdapter mAdapter;
-    private int mPage = 0;
+
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         View rootView = inflater.inflate(R.layout.fragment_multi_type, null);
-
-
         mRecyclerView = (RecyclerView) rootView.findViewById(R.id.recycler_view);
 
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -41,11 +41,11 @@ public class MultiTypeFragment extends Fragment implements IViewHolderFactory {
         mAdapter.setViewHolderFactory(this);
         mRecyclerView.setAdapter(mAdapter);
 
-        mAdapter.add(getImageVirtualData(), VIEW_TYPE_IAMGE);
-        mAdapter.addAll(getTextVirtualData(), VIEW_TYPE_TEXT);
-        mAdapter.addAll(getTextImageVirualData(), VIEW_TYPE_TEXT_IMAGE);
-        mAdapter.addAll(getRecordVirtualData(), VIEW_TYPE_CARD);
-        mAdapter.showNoMore();
+        mAdapter.addAll(Arrays.asList(getImageVirtualData()), VIEW_TYPE_IAMGE);
+        mAdapter.addAll(Arrays.asList(getTextVirtualData()), VIEW_TYPE_TEXT);
+        mAdapter.addAll(Arrays.asList(getTextImageVirualData()), VIEW_TYPE_TEXT_IMAGE);
+        mAdapter.addAll(Arrays.asList(getRecordVirtualData()), VIEW_TYPE_CARD);
+
         return rootView;
     }
 
@@ -67,8 +67,9 @@ public class MultiTypeFragment extends Fragment implements IViewHolderFactory {
     }
 
 
-    public String getImageVirtualData() {
-        return "http://i03.pictn.sogoucdn.com/3c28af542f2d49f7-fe9c78d2ff4ac332-73d7732e20e2fcfaa954979d623bcbe9_qq";
+    public String[] getImageVirtualData() {
+            return new String[]{"http://i03.pictn.sogoucdn.com/3c28af542f2d49f7-fe9c78d2ff4ac332-73d7732e20e2fcfaa954979d623bcbe9_qq",
+                    "http://i03.pictn.sogoucdn.com/3c28af542f2d49f7-fe9c78d2ff4ac332-73d7732e20e2fcfaa954979d623bcbe9_qq"};
     }
 
     public String[] getTextVirtualData() {
