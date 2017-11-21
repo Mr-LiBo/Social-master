@@ -1,6 +1,7 @@
 package libo.com.social.ui.Main.mall.adapter.multiTypeAdapter;
 
 import android.content.Context;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.ViewGroup;
 
@@ -17,8 +18,9 @@ import libo.com.social.ui.Main.mall.adapter.multiTypeAdapter.viewHolder.BaseView
  * @Email libo205@qq.com
  * @Describe :
  */
-
 public class CustomMultiTypeAdapter extends RecyclerAdapter {
+    int mViewCount = 0;
+
     private List<Object> mViewsData;
     private ViewTypeManager mViewHolderManager;
 
@@ -34,6 +36,19 @@ public class CustomMultiTypeAdapter extends RecyclerAdapter {
         }
     }
 
+
+    public <T> void addAll(List<T> data,int viewType){
+        mViewsData.addAll(data);
+        int count= mViewsData.size();
+        int size = data.size();
+        for (int i=0;i<size;i++){
+            mViewHolderManager.putViewType(mViewCount ,viewType);
+            mViewCount++;
+        }
+        notifyDataSetChanged();
+    }
+
+
     /***
      *  创建一个新的 ViewHolder 并初始化一些私有字段，以供回收视图使用。
      * @param parent
@@ -41,15 +56,8 @@ public class CustomMultiTypeAdapter extends RecyclerAdapter {
      * @return
      */
     @Override
-    public BaseViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-
-            return mViewHolderManager.getViewHolder(parent,viewType);
-
-    }
-
-    @Override
     public BaseViewHolder onCreateBaseViewHolder(ViewGroup parent, int viewType) {
-        return null;
+        return mViewHolderManager.getViewHolder(parent,viewType);
     }
 
     /**
@@ -58,9 +66,8 @@ public class CustomMultiTypeAdapter extends RecyclerAdapter {
      * @param position
      */
     @Override
-    public void onBindViewHolder(BaseViewHolder holder, int position) {
-        if (position != 0 && mViewCount != 1) {
-            Log.i("TAG","onBindViewHolder :"+position+"  mViewCount:"+mViewCount);
+    public void onBindBaseViewHolder(BaseViewHolder holder, int position) {
+        if (position  >0) {
             holder.setData(mViewsData.get(position));
         }
     }
@@ -75,17 +82,12 @@ public class CustomMultiTypeAdapter extends RecyclerAdapter {
         return mViewHolderManager.getViewType(position);
     }
 
-
-    public <T> void addAll(List<T> data,int viewType){
-        mViewsData.addAll(data);
-        int positionStart = mViewCount ;
-        int size = data.size();
-        for (int i=0;i<size;i++){
-            mViewHolderManager.putViewType(mViewCount ,viewType);
-            mViewCount++;
-        }
-        Log.e("addAll","data.size() :" +data.size()+"  mViewCount : "+mViewCount);
-        notifyItemRangeInserted(positionStart,size);
+    @Override
+    public int getItemCount() {
+        return mViewsData.size();
     }
+
+
+
 
 }

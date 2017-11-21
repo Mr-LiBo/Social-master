@@ -1,10 +1,12 @@
 package libo.com.social.ui.Main.mall;
 
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,6 +48,7 @@ public class MultiTypeFragment extends Fragment implements IViewHolderFactory {
         mAdapter.addAll(Arrays.asList(getTextImageVirualData()), VIEW_TYPE_TEXT_IMAGE);
         mAdapter.addAll(Arrays.asList(getRecordVirtualData()), VIEW_TYPE_CARD);
 
+       int coount =  mAdapter.getItemCount();
         return rootView;
     }
 
@@ -56,7 +59,7 @@ public class MultiTypeFragment extends Fragment implements IViewHolderFactory {
             case VIEW_TYPE_TEXT:
                 return (V) new TextViewHolder(parent);
             case VIEW_TYPE_IAMGE:
-                return (V) new ImageViewHolder(parent);
+                return getImageViewHolder(parent);
             case VIEW_TYPE_TEXT_IMAGE:
                 return (V) new TextImageViewHolder(parent);
             case VIEW_TYPE_CARD:
@@ -66,9 +69,22 @@ public class MultiTypeFragment extends Fragment implements IViewHolderFactory {
         }
     }
 
+    @NonNull
+    private <V extends BaseViewHolder> V getImageViewHolder(ViewGroup parent) {
+        ImageViewHolder imageViewHolder = new ImageViewHolder(parent);
+        imageViewHolder.setCallBack(new ImageViewHolder.OnClickListenerCallBack() {
+            @Override
+            public void OnClickListener(String object) {
+                Log.e("MultiTypeFramgent","你点了"+object);
+            }
+        });
+        return (V) imageViewHolder;
+    }
+
 
     public String[] getImageVirtualData() {
             return new String[]{"http://i03.pictn.sogoucdn.com/3c28af542f2d49f7-fe9c78d2ff4ac332-73d7732e20e2fcfaa954979d623bcbe9_qq",
+                    "http://i03.pictn.sogoucdn.com/3c28af542f2d49f7-fe9c78d2ff4ac332-73d7732e20e2fcfaa954979d623bcbe9_qq",
                     "http://i03.pictn.sogoucdn.com/3c28af542f2d49f7-fe9c78d2ff4ac332-73d7732e20e2fcfaa954979d623bcbe9_qq"};
     }
 

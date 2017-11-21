@@ -1,6 +1,7 @@
 package libo.com.social.ui.Main.mall.adapter.multiTypeAdapter.viewHolder;
 
 import android.util.Log;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
@@ -25,14 +26,21 @@ public class ImageViewHolder extends BaseViewHolder<String> {
     public void onInitializeView() {
         super.onInitializeView();
         mImage = findViewById(R.id.image);
+
     }
 
     @Override
-    public void setData(String object) {
+    public void setData(final String object) {
         super.setData(object);
         Glide.with(itemView.getContext())
                 .load(object)
                 .into(mImage);
+        itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                callBack.OnClickListener(object);
+            }
+        });
     }
 
     @Override
@@ -40,4 +48,18 @@ public class ImageViewHolder extends BaseViewHolder<String> {
         super.onItemViewClick(object);
         Log.i("ImageViewHolder","onItemViewClick");
     }
+
+    public OnClickListenerCallBack callBack;
+
+    public void setCallBack(OnClickListenerCallBack callBack) {
+        if (this.callBack==null) {
+            this.callBack = callBack;
+        }
+    }
+
+    public interface  OnClickListenerCallBack{
+       void OnClickListener(String object);
+    }
+
+
 }
