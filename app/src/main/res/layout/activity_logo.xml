@@ -7,6 +7,30 @@
     android:layout_height="match_parent"
     android:background="#11ff0000">
 
+
+    <libo.com.social.ui.view.CircularImageView
+        app:civ_border="true"
+        app:civ_borderColor="#FF0E237E"
+        app:civ_borderWidth="1dp"
+        app:civ_shadowRadius="7"
+        app:civ_shadow="true"
+        app:civ_selector="true"
+        app:civ_selectorColor="@color/red"
+        app:civ_selectorStrokeColor="@color/colorPrimary"
+        app:civ_selectorStrokeWidth="5dp"
+        app:civ_shadowColor="@color/graye"
+        app:civ_shadowDx="300"
+        app:civ_shadowDy="300"
+        android:id="@+id/stick_img"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        />
+
+
     <TextView
         android:textSize="16dp"
         android:layout_marginTop="200dp"

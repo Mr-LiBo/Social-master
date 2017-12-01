@@ -14,4 +14,57 @@
     </declare-styleable>
 
 
+
+    <declare-styleable name="CircularImageViewStyle">
+        <attr name="circularImageViewDefault" format="reference" />
+    </declare-styleable>
+
+    <!--圆形图的样式-->
+    <declare-styleable name="CircularImageView">
+        <!-- 是否在图像周围绘制圆形边框 -->
+        <attr name="civ_border" format="boolean" />
+        <!-- 边框的颜色围绕着图像。 -->
+        <attr name="civ_borderColor" format="color" />
+        <!--  使这个像素宽。(如果启用)-->
+        <attr name="civ_borderWidth" format="dimension" />
+        <!--是否在触摸事件上画一个选择器 . -->
+        <attr name="civ_selector" format="boolean" />
+        <!-- 在触摸事件中，选择器的颜色在图像的顶部绘制。-->
+        <attr name="civ_selectorColor" format="color" />
+        <!--在触摸事件的图像上绘制的选择器笔画的颜色。一定要提供一些不透明度。-->
+        <attr name="civ_selectorStrokeColor" format="color" />
+        <!--在触摸事件中，在图像上绘制的选择器笔画宽度为像素。  -->
+        <attr name="civ_selectorStrokeWidth" format="dimension" />
+        <!-- 是否在你的圆形图像周围画一个阴影。 -->
+        <attr name="civ_shadow" format="boolean" />
+        <!-- 阴影的半径延伸到  -->
+        <attr name="civ_shadowRadius" format="float" />
+        <!-- 水平的影子抵消。 -->
+        <attr name="civ_shadowDx" format="float" />
+        <!--  垂直的影子抵消-->
+        <attr name="civ_shadowDy" format="float" />
+        <!-- 在你的圆形图像周围的阴影的颜色 -->
+        <attr name="civ_shadowColor" format="color" />
+    </declare-styleable>
+
+
+
+    <declare-styleable name="MarqueeViewStyle">
+        <attr name="mvInterval" format="integer|reference"/>
+        <attr name="mvAnimDuration" format="integer|reference"/>
+        <attr name="mvTextSize" format="dimension|reference"/>
+        <attr name="mvTextColor" format="color|reference"/>
+        <attr name="mvSingleLine" format="boolean"/>
+        <attr name="mvGravity">
+            <enum name="left" value="0"/>
+            <enum name="center" value="1"/>
+            <enum name="right" value="2"/>
+        </attr>
+        <attr name="mvDirection">
+            <enum name="bottom_to_top" value="0"/>
+            <enum name="top_to_bottom" value="1"/>
+            <enum name="right_to_left" value="2"/>
+            <enum name="left_to_right" value="3"/>
+        </attr>
+    </declare-styleable>
 </resources>

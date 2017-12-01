@@ -9,6 +9,7 @@ import android.widget.ImageView;
 
 import libo.com.social.R;
 import libo.com.social.ui.utils.Code;
+import libo.com.social.ui.view.CircularImageView;
 
 /**
  * Created by liaodp on 2017/11/7.
@@ -36,6 +37,9 @@ public class LogoActivity extends AppCompatActivity  implements View.OnClickList
         String tempCode = "1234";
 //        ImageView ivCode = findViewById(R.id.iv_code);
 //        ivCode.setImageBitmap(Code.getInstance().createBitmap(tempCode) );
+
+        CircularImageView imageView = (CircularImageView)  findViewById(R.id.stick_img);
+        imageView.setImageResource(R.drawable.guide1_1);
     }
 
     @Override
