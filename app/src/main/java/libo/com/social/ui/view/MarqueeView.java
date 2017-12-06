@@ -20,6 +20,7 @@ import java.util.List;
 import libo.com.social.R;
 
 /**
+ * 水平 垂直  文字滚动 显示
  * @Author LiBo on 2017/12/1.
  * @Email libo205@qq.com
  * @Describe :

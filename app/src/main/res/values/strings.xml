@@ -1,9 +1,11 @@
 <resources>
-    <string name="app_name">Social</string>
+    <string name="app_name">人社通</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
     <string name="title_notifications">Notifications</string>
     <string name="marquee_text">心中有阳光，脚底有力量。</string>
     <string name="marquee_texts">1心中有阳光，脚底有力量。2心中有阳光，脚底有力量。3心中有阳光，脚底有力量。4心中有阳光，脚底有力量。</string>
+    <string name="navigation_drawer_open">open</string>
+    <string name="navigation_drawer_close">close</string>
 
 </resources>

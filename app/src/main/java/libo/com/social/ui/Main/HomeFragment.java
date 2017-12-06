@@ -33,20 +33,18 @@ public class HomeFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_home,container,false);
+        View rootView = inflater.inflate(R.layout.fragment_home, container, false);
         this.abilitymapview = (AbilityMapView) rootView.findViewById(R.id.ability_map_view);
         abilitymapview.setData(new AbilityBean(5, 70, 80, 70, 80, 80, 80));
-
-
         initMarqueeView(rootView);
-
         return rootView;
     }
+
 
     private void initMarqueeView(View rootView) {
         MarqueeView marqueeView = rootView.findViewById(R.id.marqueeview);
         final MarqueeView marqueeView1 = (MarqueeView) rootView.findViewById(R.id.marqueeView1);
-        MarqueeView  marqueeView3 = (MarqueeView) rootView.findViewById(R.id.marqueeView3);
+        MarqueeView marqueeView3 = (MarqueeView) rootView.findViewById(R.id.marqueeView3);
         List<CharSequence> list = new ArrayList<>();
         SpannableString ss1 = new SpannableString("1、MarqueeView开源项目");
         ss1.setSpan(new ForegroundColorSpan(Color.RED), 2, 13, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
@@ -61,7 +59,7 @@ public class HomeFragment extends Fragment {
 
         marqueeView.startWithList(list);
 
-        marqueeView.setOnItemClickListener(new MarqueeView.OnItemClickListener(){
+        marqueeView.setOnItemClickListener(new MarqueeView.OnItemClickListener() {
             @Override
             public void onItemClick(int position, TextView textView) {
                 Toast.makeText(getContext(), textView.getText() + "", Toast.LENGTH_SHORT).show();
@@ -81,4 +79,6 @@ public class HomeFragment extends Fragment {
 //        marqueeView3.startWithText(getString(R.string.marquee_texts));
 
     }
+
+
 }

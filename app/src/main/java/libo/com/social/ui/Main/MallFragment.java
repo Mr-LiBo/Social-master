@@ -102,12 +102,11 @@ public class MallFragment extends Fragment {
         fragmentList.add(waterFragment);
 
         MultiTypeFragment multiTypeFragment = new MultiTypeFragment();
-
         fragmentList.add(multiTypeFragment);
 
 
 
-        for (int i=0;i<channelList.size();i++)
+        for (int i=0;i<channelList.size()-2;i++)
         {
             if (i== 5){
                 VideoFragment entertainmentFragment = new VideoFragment();

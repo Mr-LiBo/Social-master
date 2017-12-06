@@ -6,10 +6,12 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.SeekBar;
 import android.widget.Toast;
 
 import libo.com.social.R;
+import libo.com.social.ui.view.CircularImageView;
 import libo.com.social.ui.view.WaterView;
 
 public class WaterFragment extends Fragment implements View.OnClickListener {
@@ -58,11 +60,8 @@ public class WaterFragment extends Fragment implements View.OnClickListener {
         seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean b) {
-
 //                Log.i(TAG,"progress:"+progress);
-
                 waterView.setH(progress);
-
             }
 
             @Override
@@ -75,6 +74,7 @@ public class WaterFragment extends Fragment implements View.OnClickListener {
 
             }
         });
+
      }
 
     @Override
