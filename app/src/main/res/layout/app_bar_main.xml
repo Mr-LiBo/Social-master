@@ -6,42 +6,8 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <android.support.design.widget.AppBarLayout
-        android:id="@+id/appbar_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
+    <include layout="@layout/app_bar_head"/>
 
+    <include layout="@layout/app_bar_center" />
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="?attr/colorPrimary">
-
-        <TextView
-                android:id="@+id/tv_title"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_centerHorizontal="true"
-                android:layout_gravity="center"
-                android:singleLine="true"
-                android:text="首页" />
-
-
-            <!--<Button-->
-                <!--android:id="@+id/btnRight"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_gravity="right"-->
-                <!--android:layout_marginRight="10dp"-->
-                <!--android:text="扫一扫"-->
-                <!--android:textColor="@color/white"-->
-                <!--android:textStyle="bold" />-->
-        </android.support.v7.widget.Toolbar>
-
-    </android.support.design.widget.AppBarLayout>
-
-
-    <include layout="@layout/activity_main_center" />
 </LinearLayout>

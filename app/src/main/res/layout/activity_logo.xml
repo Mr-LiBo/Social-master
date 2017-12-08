@@ -8,7 +8,7 @@
     android:background="#11ff0000">
 
 
-    <libo.com.social.ui.view.CircularImageView
+    <libo.com.social.ui.widget.CircularImageView
         app:civ_border="true"
         app:civ_borderColor="#FF0E237E"
         app:civ_borderWidth="1dp"

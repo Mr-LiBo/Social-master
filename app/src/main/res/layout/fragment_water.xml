@@ -15,7 +15,7 @@
     <!--waterview_paint_color_second     第二支画笔的颜色-->
     <!--waterview_sleep_time     休眠时间毫秒 参考值100-->
     <!--waterview_offset_increment_value    初项递增值，表示波浪的快慢   0参考值.4f-->
-    <libo.com.social.ui.view.WaterView
+    <libo.com.social.ui.widget.WaterView
         android:layout_width="250dp"
         android:id="@+id/waterview"
         android:layout_height="250dp"

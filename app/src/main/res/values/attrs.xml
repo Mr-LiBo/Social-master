@@ -79,4 +79,7 @@
     <declare-styleable name="MarqueeTextNews">
         <attr name="textHeight" format="integer" />
     </declare-styleable>
+
+    <item name="statusbar_view" type="id"/>
+    <item name="translucent_view" type="id"/>
 </resources>
