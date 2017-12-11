@@ -1,5 +1,6 @@
 package libo.com.social.ui.logo;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.view.ViewPager;
@@ -23,6 +24,11 @@ import libo.com.social.ui.main.MainActivity;
 public class GuideActivity extends AppCompatActivity {
 
     private TextView tv_experience;
+
+    public static Intent getLauncherIntent(Activity context) {
+        Intent intent = new Intent(context, GuideActivity.class);
+        return intent;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

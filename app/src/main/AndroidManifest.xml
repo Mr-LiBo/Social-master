@@ -22,10 +22,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity android:name=".ui.logo.GuideActivity" />
         <activity android:name=".ui.main.MainActivity" />
-
         <activity android:name=".ui.main.my.LoginActivity" />
         <activity
             android:name=".ui.main.my.CheeseDetailActivity"
@@ -37,9 +35,12 @@
         <activity android:name=".ui.main.my.AccountManagerActivity" />
         <activity
             android:name=".ui.login.LoginActivity"
+            android:label="@string/title_activity_login" />
+        <activity android:name=".ui.login.CreateGestureActivity" />
+        <activity android:name=".ui.login.GestureLoginActivity" />
+        <activity
+            android:name=".LoginActivity"
             android:label="@string/title_activity_login"></activity>
-
-        <activity android:name=".ui.login.CreateGestureActivity"/>
     </application>
 
 </manifest>

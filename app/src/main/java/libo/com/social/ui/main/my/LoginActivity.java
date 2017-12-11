@@ -5,9 +5,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.view.LayoutInflater;
 import android.view.View;
 
 import libo.com.social.R;
+
 import libo.com.social.ui.widget.MarqueeText;
 
 /**
@@ -34,6 +36,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         findViewById(R.id.start_btn).setOnClickListener(this);
         findViewById(R.id.pause_btn).setOnClickListener(this);
         findViewById(R.id.restart_btn).setOnClickListener(this);
+
+        findViewById(R.id.btn_login).setOnClickListener(this);
     }
 
     @Override
@@ -48,6 +52,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             case R.id.restart_btn:
                 marqueeText_left.restartScroll();
                 break;
+            case R.id.btn_login:
+
+                break;
         }
     }
+
 }

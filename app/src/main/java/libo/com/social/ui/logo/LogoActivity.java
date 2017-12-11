@@ -7,13 +7,18 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import libo.com.social.R;
+import libo.com.social.ui.login.GestureLoginActivity;
+import libo.com.social.ui.login.LoginActivity;
+import libo.com.social.ui.main.MainActivity;
 import libo.com.social.ui.widget.CircularImageView;
+import libo.com.social.utils.LocalConfigUtil;
+
 
 /**
  * Created by liaodp on 2017/11/7.
  */
 
-public class LogoActivity extends AppCompatActivity  implements View.OnClickListener {
+public class LogoActivity extends AppCompatActivity implements View.OnClickListener {
 
 
     @Override
@@ -28,15 +33,22 @@ public class LogoActivity extends AppCompatActivity  implements View.OnClickList
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                startActivity(new Intent(LogoActivity.this,GuideActivity.class));
+                boolean isFirstJoin = LocalConfigUtil.getFirstJoinState(LogoActivity.this);
+                if (isFirstJoin) {
+                    LocalConfigUtil.setFirstJoinState(LogoActivity.this,false);
+                    startActivity(GuideActivity.getLauncherIntent(LogoActivity.this));
+                } else {
+                    boolean isCreateGestureLock = LocalConfigUtil.getCreateGestureLockState(LogoActivity.this);
+                    if (isCreateGestureLock) {
+                        startActivity(GestureLoginActivity.getLauncherIntent(LogoActivity.this));
+                    } else {
+                        startActivity(MainActivity.getLauncherIntent(LogoActivity.this));
+                    }
+                }
             }
         }, 1000);
 
-        String tempCode = "1234";
-//        ImageView ivCode = findViewById(R.id.iv_code);
-//        ivCode.setImageBitmap(Code.getInstance().createBitmap(tempCode) );
-
-        CircularImageView imageView = (CircularImageView)  findViewById(R.id.stick_img);
+        CircularImageView imageView = (CircularImageView) findViewById(R.id.stick_img);
         imageView.setImageResource(R.drawable.guide1_1);
     }
 

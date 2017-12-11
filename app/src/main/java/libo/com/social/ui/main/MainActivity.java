@@ -1,6 +1,7 @@
 package libo.com.social.ui.main;
 
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -22,6 +23,7 @@ import android.widget.TextView;
 import java.util.HashMap;
 
 import libo.com.social.R;
+import libo.com.social.ui.login.CreateGestureActivity;
 import libo.com.social.ui.login.LoginActivity;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, NavigationView.OnNavigationItemSelectedListener {
@@ -36,6 +38,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private RadioGroup radioGroup;
     private TextView tv_title;
     private DrawerLayout drawer;
+
+    public static Intent getLauncherIntent(Activity context) {
+        Intent intent = new Intent(context, MainActivity.class);
+        return intent;
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

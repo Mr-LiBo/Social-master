@@ -14,13 +14,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 import libo.com.social.R;
+import libo.com.social.config.UserInfo;
+import libo.com.social.ui.logo.LogoActivity;
 import libo.com.social.ui.main.MainActivity;
 import libo.com.social.ui.widget.gestureLock.cache.ACache;
 import libo.com.social.ui.widget.gestureLock.util.GestureLockUtil;
 import libo.com.social.ui.widget.gestureLock.widget.GestureLockIndicator;
 import libo.com.social.ui.widget.gestureLock.widget.GestureLockView;
+import libo.com.social.utils.LocalConfigUtil;
 
 /**
+ * 创建手式密码锁
  * @Author LiBo on 2017/12/8.
  * @Email libo205@qq.com
  * @Describe :
@@ -29,7 +33,7 @@ import libo.com.social.ui.widget.gestureLock.widget.GestureLockView;
 public class CreateGestureActivity extends Activity {
 
     private static final String TAG = "GestureLockActivity";
-    public static final String GESTURE_PASSWORD = "GesturePassword";
+
 
     GestureLockIndicator gestureLockIndicator;
     private TextView messageTv;
@@ -53,7 +57,6 @@ public class CreateGestureActivity extends Activity {
         messageTv = findViewById(R.id.messageTv);
 
         aCache = ACache.get(CreateGestureActivity.this);
-
 
 
         gestureLockView = findViewById(R.id.gestureLockView);
@@ -84,7 +87,7 @@ public class CreateGestureActivity extends Activity {
                     updateStatus(Status.CORRECT, cells);
                 } else if (mChosenGesture == null && cells.size() < 4) {
                     updateStatus(Status.LESSERROR, cells);
-                } else if (mChosenGesture == null) {
+                } else if (mChosenGesture != null) {
                     if (mChosenGesture.equals(cells)) {
                         updateStatus(Status.CONFIRMCORRECT, cells);
                     } else {
@@ -136,7 +139,7 @@ public class CreateGestureActivity extends Activity {
      */
     private void saveChosenGesture(List<GestureLockView.Cell> cells) {
         byte[] bytes = GestureLockUtil.gestureToHash(cells);
-        aCache.put(GESTURE_PASSWORD, bytes);
+        aCache.put(UserInfo.GESTURE_PASSWORD, bytes);
     }
 
 
@@ -145,6 +148,7 @@ public class CreateGestureActivity extends Activity {
      */
     private void setLockGestureSuccess() {
         Toast.makeText(this, "create gesture success", Toast.LENGTH_SHORT).show();
+        LocalConfigUtil.setCreateGestureLockState(CreateGestureActivity.this,true);
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }

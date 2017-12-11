@@ -19,6 +19,7 @@ import libo.com.social.R;
 import libo.com.social.http.NetUtil;
 import libo.com.social.ui.main.mall.MultiTypeFragment;
 //import libo.com.social.ui.Main.mall.VideoFragment;
+import libo.com.social.ui.main.mall.SportsFragment;
 import libo.com.social.ui.main.mall.VideoFragment;
 import libo.com.social.ui.main.mall.adapter.PageFragmentAdapter;
 
@@ -104,9 +105,10 @@ public class MallFragment extends Fragment {
         MultiTypeFragment multiTypeFragment = new MultiTypeFragment();
         fragmentList.add(multiTypeFragment);
 
+        SportsFragment sportsFragment = new SportsFragment();
+        fragmentList.add(sportsFragment);
 
-
-        for (int i=0;i<channelList.size()-2;i++)
+        for (int i=0;i<channelList.size()-3;i++)
         {
             if (i== 5){
                 VideoFragment entertainmentFragment = new VideoFragment();
