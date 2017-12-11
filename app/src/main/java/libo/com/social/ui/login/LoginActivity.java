@@ -336,7 +336,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             if (success) {
                 if (gestureLock.isChecked())
                 {
-                    startActivity(GestureLockActivity.getLauncherIntent(LoginActivity.this));
+                    startActivity(CreateGestureActivity.getLauncherIntent(LoginActivity.this));
                 }
                 finish();
             } else {

@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.design.widget.TabLayout;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -27,7 +26,7 @@ import libo.com.social.ui.widget.gestureLock.widget.GestureLockView;
  * @Describe :
  */
 
-public class GestureLockActivity extends Activity {
+public class CreateGestureActivity extends Activity {
 
     private static final String TAG = "GestureLockActivity";
     public static final String GESTURE_PASSWORD = "GesturePassword";
@@ -42,7 +41,7 @@ public class GestureLockActivity extends Activity {
     private ACache aCache;
 
     public static Intent getLauncherIntent(Activity context) {
-        Intent intent = new Intent(context, GestureLockActivity.class);
+        Intent intent = new Intent(context, CreateGestureActivity.class);
         return intent;
     }
 
@@ -53,7 +52,9 @@ public class GestureLockActivity extends Activity {
         gestureLockIndicator = findViewById(R.id.gestureLockIndicator);
         messageTv = findViewById(R.id.messageTv);
 
-        aCache = ACache.get(GestureLockActivity.this);
+        aCache = ACache.get(CreateGestureActivity.this);
+
+
 
         gestureLockView = findViewById(R.id.gestureLockView);
         resetBtn = findViewById(R.id.resetBtn);

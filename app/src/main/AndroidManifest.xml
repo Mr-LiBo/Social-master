@@ -39,7 +39,7 @@
             android:name=".ui.login.LoginActivity"
             android:label="@string/title_activity_login"></activity>
 
-        <activity android:name=".ui.login.GestureLockActivity"/>
+        <activity android:name=".ui.login.CreateGestureActivity"/>
     </application>
 
 </manifest>
